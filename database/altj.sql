@@ -1,0 +1,2 @@
+CREATE USER altj WITH PASSWORD 'jellyfish';
+CREATE DATABASE altj OWNER altj;

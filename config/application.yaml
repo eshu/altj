@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: Altj
+  main:
+    show_banner: false
+  datasource:
+    platform: "postgresql"
+    url: "jdbc:postgresql:altj"
+    username: "altj"
+    password: "jellyfish"
+  thymeleaf:
+    mode: "HTML5"
+
+logging:
+  level:
+    altj: TRACE
+
+altj:
+  security:
+    remember-me-key: "ukSSEs73,-55B:Jxvp-/$&qWe)<AG6,2"
+    maximum-sessions: 1

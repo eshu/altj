@@ -1,0 +1,43 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'altj'
+    version = '0.0.1-SNAPSHOT'
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compile (
+        'org.springframework.boot:spring-boot-starter-data-jpa',
+        'org.springframework.boot:spring-boot-starter-web',
+        'org.springframework.boot:spring-boot-starter-security',
+        'org.springframework.boot:spring-boot-starter-thymeleaf',
+        "joda-time:joda-time:${jodaTimeVersion}",
+        "org.jadira.usertype:usertype.jodatime:${jadiraJodaTimeVersion}"
+    )	
+    runtime(
+        'org.springframework.boot:spring-boot-starter-undertow',
+        "org.postgresql:postgresql:${postgresqlVersion}"
+    )
+    testCompile(
+        'org.springframework.boot:spring-boot-starter-test'
+    )
+}

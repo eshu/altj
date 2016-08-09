@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title th:text="#{index.title}">Sign In</title>
+</head>
+<body>
+  <div th:if="${#httpServletRequest.remoteUser != null}">
+    Hi, <span th:text= "${#httpServletRequest.remoteUser}"></span>
+    <form th:action="@{/logout}" method="post">
+      <input type="submit" value="Log out" />
+    </form>
+  </div>
+  <div th:if="${#httpServletRequest.remoteUser == null}">
+    <a href="/login" th:href="@{/login}">Sign up</a>
+  </div>
+</body>
+</html>
